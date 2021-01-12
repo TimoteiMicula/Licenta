@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <top-header></top-header>
-      <router-link to="/">Home</router-link> |
+    <navbar></navbar>
+    <div><br><br><br><br></div>
+     <!-- <top-header></top-header> -->
+      <!-- <router-link to="/">Home</router-link> |
       <router-link to="/contact">Contact</router-link> |
       <router-link to="/register">Register</router-link> |
        <router-link to="/login">Login</router-link> |
         <router-link to="/secret">Secret</router-link> |
         <router-link to="/crud">Crud</router-link> |
-        <router-link to="/terms">Termeni de inchiriere</router-link> |
-    </div>
-    <router-view/>
+        <router-link to="/terms">Termeni de inchiriere</router-link> | -->
+       
+    
+    <router-view/> 
   </div>
 </template>
+ <script type="text/javascript" src="/js/chunk-vendors.js"></script>
+      <script type="text/javascript" src="/js/app.js"></script>
 <script>
 import TopHeader from "./components/Top-Header"
+import Nav from "./components/Nav"
+require('bootstrap');
 export default {
-  components: {'top-header': TopHeader}
+  components: {'top-header': TopHeader,
+                'navbar': Nav}
 }
 </script>
 

@@ -10,6 +10,7 @@ import Terms from "../views/Terms.vue";
 
 
 
+
 import firebase from 'firebase' ; 
 require('firebase/auth');
 
@@ -53,6 +54,7 @@ const routes = [
     name: "terms",
     component: Terms
   },
+  
 ];
 
 const router = new VueRouter({
