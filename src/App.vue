@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <div><br><br><br><br></div>
-     <!-- <top-header></top-header> -->
+
+    <!-- <top-header></top-header> -->
+
+
+
+    <!-- <div><br><br><br><br></div> -->
+  
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/contact">Contact</router-link> |
       <router-link to="/register">Register</router-link> |

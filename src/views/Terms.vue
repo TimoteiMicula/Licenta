@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="terms1">
     <h2>TERMENI ȘI CONDIȚII DE ÎNCHIRIERE AUTO</h2>
 
 <p>Art.1 Autoturismele se închiriează numai persoanelor ce posedă permis de conducere național sau internațional valabil, cu o vechime de cel puțin 3 ani și vârsta de peste 23 de ani, împliniți la data închirierii autoturismului.</p>
@@ -23,5 +23,7 @@
 
 <style lang="scss" scoped>
 @import "../scss/variables.scss";
-
+.terms1{
+background: url("../assets/img-terms.jpg");
+}
 </style>

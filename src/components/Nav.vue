@@ -43,8 +43,11 @@
 <style lang="scss" scoped>
 @import "../scss/variables.scss";
  .navbar {
-        background-color:$navTransparent;
+        background-color:$turcoaz;
         height: 62px;
+        opacity: 91%;
+        box-shadow: 0 0 5px rgb(70, 70, 70);
+
     }
 
     @media screen and (max-width: 992px) {
@@ -55,7 +58,9 @@
       text-align: center;
       padding: -12px;
       margin-top: 13px;
-        background-color: $navTransparent;
+      background-color: $turcoaz;
+      opacity: 91%;
+       box-shadow: 0 0 5px rgb(95, 95, 95);
     }
   
   }
