@@ -1,7 +1,11 @@
 <template>
-<div class="terms1">
-    <h2>TERMENI ȘI CONDIȚII DE ÎNCHIRIERE AUTO</h2>
+<div class="terms1"><br><br><br><br><br><br>
+    
+    <div class="container">
 
+<div class="col-md-8  terms2">
+    <h2>TERMENI ȘI CONDIȚII DE ÎNCHIRIERE AUTO</h2>
+    <br>
 <p>Art.1 Autoturismele se închiriează numai persoanelor ce posedă permis de conducere național sau internațional valabil, cu o vechime de cel puțin 3 ani și vârsta de peste 23 de ani, împliniți la data închirierii autoturismului.</p>
 <p>Art.2 Actele necesare pentru închiriere sunt:<br>În original: permisul de conducere, pasaport, buletin sau carte de indentitate;</p>
 <p>Art.3 Plata tarifului se va face în LEI, la cursul BNR din ziua plății.</p>
@@ -18,6 +22,55 @@
 <p>Art.15&nbsp;SC Auto Data Rental SRL îsi păstrează dreptul de a recupera de la utilizator sau client contravaloare pagubelor produse peste limita garanției, în situațiile în care clientul sau utilizatorul încalcă obligațiile prezentului contract, în conformitate cu legile în vigoare.</p>
 <p>Art.16&nbsp;Prin semnarea prezentului contract, clientul recunoaște că a citit, a înteles și se obligă să respecte prezentele condiții de închiriere ca parte integrantă a contractului.</p>
 <p>Art.17&nbsp;Clientul are obligația de a preda mașina curată, astfel încât să poată fi verificată. Garanția se deblochează numai după verificare.</p>
+<br><br><br><br>
+</div>
+</div>
+ <section class="contact-area">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-4 footer">
+            <div><br /></div>
+            <img src="../assets/location2.png" style="" alt="" class="icons" />
+            <!-- <h3>Location</h3> -->
+            <address>
+              <br />
+              <div>Beznea nr. 60, Bihor</div>
+              <div>Cod postal: 417081</div>
+              <div>România</div>
+            </address>
+          </div>
+          <div class="col-md-4">
+            <div><br /></div>
+            <img src="../assets/telephone.png" style="" alt="" class="icons" />
+            <div class="features-caption footer">
+              <!-- <h3 >Phone</h3> -->
+              <br />
+              <a href="tel:0741682347" class="footer">0741 682 347</a>
+              <br />
+              <a href="tel:0735702305" class="footer">0735 702 305</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div><br /></div>
+            <img src="../assets/email.png" style="" class="icons" />
+            <div class="features-icon">
+              <!-- <img src="../assets/icon/icon3.svg" alt=""> -->
+            </div>
+            <div class="features-caption footer">
+              <!-- <h3>Email</h3> -->
+              <br />
+              <a href="mailto: timote.micula@emanuel.ro" class="footer"
+                >timote.micula@emanuel.ro</a
+              >
+              <br />
+              <a href="mailto: timote.micula@emanuel.ro" class="footer"
+                >Send Email</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </div>
 </template>
 
@@ -25,5 +78,27 @@
 @import "../scss/variables.scss";
 .terms1{
 background: url("../assets/img-terms.jpg");
+
+}
+.terms2{
+text-align: center;
+color: $alb;
+
+}
+
+.contact-area {
+  background-color: $turcoaz;
+  border-radius: 5px;
+}
+
+.footer {
+  color: $alb;
+}
+
+.icons {
+  background-color: aliceblue;
+  border-radius: 50%;
+  background-size: 220%;
+  padding: 10px;
 }
 </style>

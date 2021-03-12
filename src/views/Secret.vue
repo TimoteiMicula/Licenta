@@ -1,20 +1,29 @@
 <template>
   <div>
+    <br><br><br><br>
+    <top-header></top-header> 
     <h3>
-      <h5 class="secret" v-for="secret in secrets" :key="secret.char_id">{{secret.name}}</h5>
-      <h4>Secret Content</h4>
+      <!-- <h5 class="secret" v-for="secret in secrets" :key="secret.char_id">{{secret.name}}</h5> -->
+      <h4>         Secret Content</h4>
     </h3>
-      <input type="text" v-model='movie' class="form-control" @keyup.enter='addMovie'>
+      <!-- <input type="text" v-model='reservation' class="form-control" @keyup.enter='addreservation'> -->
 
    <ul>
-     <li v-for="(movieName, key) in movies" :key='key'>
-      <h3> {{movieName.name}} </h3>
-       <button class="btn btn-xs btn-primary">Edit</button>
-       <button class="btn btn-xs btn-danger" @click="deleteMovie(key)">Delete</button>
+     <li v-for="(reservationName, key) in reservations" :key='key'>
+      <h3>Nume: {{reservationName.client.name}} <button class="btn btn-xs btn-primary" @click='editReservation(key)'>Edit</button> 
+      
+      <h3>Email: {{reservationName.client.email}} </h3>
+      <h3>Telefon: {{reservationName.client.tel}} </h3>
+      <h3>De la: {{reservationName.client.date1}} </h3>
+      <h3>Pana la: {{reservationName.client.date2}} </h3>
+      
+       
+       <button class="btn btn-xs btn-danger" @click="deleteReservation(key)">Delete</button></h3> 
         <br><br>
-        <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editMovie(key)'>
+        <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editReservation(key)'>
+        
      </li>
-     
+    
    </ul>
   </div>
 </template>
@@ -22,17 +31,24 @@
 
 <script>
 
+import TopHeader from "../components/Top-Header.vue"
+
+  
+
+
 import firebase from 'firebase' ; 
 require('firebase/auth');
 
 
 export default {
   name: 'Crud',
+  components: {'top-header': TopHeader,
+                },
   data() {
     return {
       secrets: "",
-       movie: null,
-      movies: {},
+       reservation: null,
+      reservations: {},
       editForm: [],
       
     };
@@ -40,6 +56,7 @@ export default {
   mounted() {
     this.getSecrets();
   },
+  
   
   
   methods: {
@@ -59,30 +76,27 @@ export default {
     }
   
   ,
-    //add in firebase
-    addMovie(){
-      firebase.database().ref('movies').push({name:this.movie})
-      .then((data)=>{console.log(data)})
-      .catch((error)=>{console.log(error)})
-      ;
-    },
-    editMovie(key){
-      firebase.database().ref('movies/'+ key).set({
-        name:this.editForm[key]
+    // edit in firebase
+    
+    editReservation(key){
+      firebase.database().ref('reservations/'+ key + '/client').set({
+        name:this.editForm[key],
+        email:this.editForm[key]
+         
       });
       this.editForm=[];
     },
 
-    deleteMovie(key){
-      firebase.database().ref('movies/'+ key).remove();
+    deleteReservation(key){
+      firebase.database().ref('reservations/'+ key).remove();
       
       }
   },
   created(){
     //show data of firebase
-    firebase.database().ref('movies').on('value',(snapshot)=>{
+    firebase.database().ref('reservations').on('value',(snapshot)=>{
       //  console.log(snapshot.val());
-      this.movies=snapshot.val();
+      this.reservations=snapshot.val();
     });
   }
 

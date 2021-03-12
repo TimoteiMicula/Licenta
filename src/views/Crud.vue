@@ -1,12 +1,18 @@
 <template>
  <div>
-   <input type="text" v-model='movie' class="form-control" @keyup.enter='addMovie'>
-
+   <br><br><br>
+   <div>
+   <input type="text" v-model='all.name1' class="form-control">
+      <input type="text" v-model='all.name2' class="form-control">
+      </div>
+     <button @click='addreservation()'>add</button>
    <ul>
-     <li v-for="(movieName, key) in movies" :key='key'>
-      <h3> {{movieName.name}} </h3>
-       <button class="btn btn-xs btn-primary">Edit</button> <br><br>
-        <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editMovie(key)'>
+     <li v-for="(all, key) in reservations" :key='key'>
+      <h3>name1 {{all.all.name1}} </h3>
+       <h3>name2 {{all.all.name2}} </h3>
+       <p>====</p>
+       <!-- <button class="btn btn-xs btn-primary">Edit</button> <br><br>
+        <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editreservation(key)'> -->
      </li>
      
    </ul>
@@ -20,22 +26,30 @@ export default {
   name: 'Crud',
   data() {
     return {
-      movie: null,
-      movies: {},
+      all:{
+      name1: null,
+      name2: null,
+      },
+      reservations: {},
       editForm: []
 
     }
   },
   methods:{
     //add in firebase
-    addMovie(){
-      firebase.database().ref('movies').push({name:this.movie})
+    addreservation(){
+      firebase.database().ref('reservations').push({all:this.all})
       .then((data)=>{console.log(data)})
       .catch((error)=>{console.log(error)})
       ;
+      //  firebase.database().ref('reservations').push({name2:this.name2})
+      // .then((data)=>{console.log(data)})
+      // .catch((error)=>{console.log(error)})
+      // ;
+      
     },
-    editMovie(key){
-      firebase.database().ref('movies/'+ key).set({
+    editreservation(key){
+      firebase.database().ref('reservations/'+ key).set({
         name:this.editForm[key]
       });
       this.editForm=[]
@@ -43,9 +57,9 @@ export default {
   },
   created(){
     //show data of firebase
-    firebase.database().ref('movies').on('value',(snapshot)=>{
+    firebase.database().ref('reservations').on('value',(snapshot)=>{
       //  console.log(snapshot.val());
-      this.movies=snapshot.val();
+      this.reservations=snapshot.val();
     });
   }
 }
