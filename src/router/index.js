@@ -7,6 +7,7 @@ import Secret from "../views/Secret.vue";
 import Crud from "../views/Crud.vue";
 import Contact from "../views/Contact.vue";
 import Terms from "../views/Terms.vue";
+import Filenew from "../views/filenew.vue";
 
 
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/",
     name: "home",
     component: Home
+  },
+  {
+    path: "/filenew",
+    name: "filenew",
+    component: Filenew
   },
   {
     path: "/secret",

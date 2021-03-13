@@ -6,6 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button> 
 
+   <img class="c" src="../assets/22logo.jpg" >
     
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -44,7 +45,7 @@
 @import "../scss/variables.scss";
  .navbar {
         background-color:$turcoaz;
-        height: 62px;
+        // height: 62px;
         opacity: 91%;
         box-shadow: 0 0 5px rgb(70, 70, 70);
 

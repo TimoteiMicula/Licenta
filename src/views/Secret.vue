@@ -10,7 +10,7 @@
 
    <ul>
      <li v-for="(reservationName, key) in reservations" :key='key'>
-      <h3>Nume: {{reservationName.client.name}} <button class="btn btn-xs btn-primary" @click='editReservation(key)'>Edit</button> 
+      <h3>Nume: {{reservationName.client.name}} <button class="btn btn-xs btn-primary" @click='editReservation(key)'>Edit</button></h3> 
       
       <h3>Email: {{reservationName.client.email}} </h3>
       <h3>Telefon: {{reservationName.client.tel}} </h3>
@@ -18,7 +18,7 @@
       <h3>Pana la: {{reservationName.client.date2}} </h3>
       
        
-       <button class="btn btn-xs btn-danger" @click="deleteReservation(key)">Delete</button></h3> 
+       <button class="btn btn-xs btn-danger" @click="deleteReservation(key)">Delete</button>
         <br><br>
         <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editReservation(key)'>
         
