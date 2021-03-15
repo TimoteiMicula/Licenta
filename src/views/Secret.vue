@@ -16,11 +16,13 @@
       <h3>Telefon: {{reservationName.client.tel}} </h3>
       <h3>De la: {{reservationName.client.date1}} </h3>
       <h3>Pana la: {{reservationName.client.date2}} </h3>
+      <h3>Masina: {{reservationName.client.car}} </h3>
       
        
        <button class="btn btn-xs btn-danger" @click="deleteReservation(key)">Delete</button>
         <br><br>
-        <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editReservation(key)'>
+        <input type="text" v-model="editForm[key]" class="form-control" @keyup.enter='editReservation(key)' >   <!-- :value="reservationName.client.name" -->
+      
         
      </li>
     

@@ -8,6 +8,7 @@ import axios from "axios";
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import filenew from "./views/filenew.vue";
 // import vuetify from './plugins/vuetify';
 
 Vue.use(BootstrapVue)
@@ -44,6 +45,7 @@ firebase.auth().onAuthStateChanged(user => {
     app = new Vue({
       router,
       store,
+      
       
       render: h => h(App)
     }).$mount("#app");
