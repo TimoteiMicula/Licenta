@@ -17,6 +17,7 @@
       <h3>De la: {{reservationName.client.date1}} </h3>
       <h3>Pana la: {{reservationName.client.date2}} </h3>
       <h3>Masina: {{reservationName.client.car}} </h3>
+      <h3>Cod unic masina: {{reservationName.client.carCod}} </h3>
       
        
        <button class="btn btn-xs btn-danger" @click="deleteReservation(key)">Delete</button>
@@ -70,8 +71,8 @@ export default {
         }
       };
       this.secrets = await this.$axios.get(
-         "http://localhost:/erik", 
-        // console.log("http://localhost:3000/erik + comment linia de mai sus (36)"),
+         "http://localhost:/", 
+        //  + comment linia de mai sus (36)"),
         config
       );
       this.secrets = this.secrets.data;

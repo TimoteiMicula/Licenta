@@ -18,6 +18,7 @@ Vue.use(BootstrapVue)
 
 
 
+// window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;

@@ -1,9 +1,9 @@
 <template>
   <div class="all zone1">
-    <section
+    <!-- <section
       id="contact-form"
       class="section appear clearfix contact-form img-home"
-    ></section>
+    ></section> -->
 
     <!-- from filenew -->
     <div class="container">
@@ -15,16 +15,13 @@
               MODEL:{{ capti.carName }} <br />
               PREȚ:{{ capti.price }} <br />
               DESCRIERE:{{ capti.caption }}
+            <br>
+            COD MASINA: {{capti.carCod}}
             </p>
 
-            <div class="col">
-              <div class="row inp4">
-                <input :value="capti.carName" />
-              </div>
-            </div>
-            <br />
+            
 
-            <button v-on:click="carNameReservatio(capti.carName)"
+            <button v-on:click="carNameReservation(capti.carName, capti.carCod)"
               type="button"
               class="btn btn-primary"
               data-toggle="modal"
@@ -131,6 +128,7 @@
         <!-- </div> -->
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -150,8 +148,10 @@ export default {
         date1: null,
         date2: null,
         car: null,
+     
         reservations: {},
         editForm: [],
+        
       },
      
 
@@ -159,8 +159,9 @@ export default {
     };
   },
   methods: {
-    say: function (carName) {
+    carNameReservation: function (carName, cod) {
       this.client.car= carName;
+      this.client.carCod = cod;
      
     },
     //add in firebase
@@ -212,6 +213,16 @@ export default {
 
 .card-deck {
   margin-top: 80px;
+  // display: flex;
+   align-items: center;
+   justify-content: center;
+  // max-width: 350px;
+  // max-height: 350px;
+  // min-width: 350px;
+  // min-height: 480px;
+  // margin-bottom: 30px;
+
+  
 }
 
 .card {
@@ -223,6 +234,8 @@ export default {
 
   border-radius: 0.125rem;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+
+   
 }
 
 //  .zone1{

@@ -69,7 +69,7 @@ const router = new VueRouter({
   routes
 });
 
-
+// verific daca sunt autentificat. daca nu sunt, redirect catre login page.
   router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
   const isAuthenticated = firebase.auth().currentUser;
