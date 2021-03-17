@@ -30,9 +30,7 @@
 
 
     <div class="row" >
-      <!-- <input
-        v-model="caption"
-        label="Caption goes here"/> -->
+
 
         <div class="col">
               <div class="row">
@@ -49,6 +47,11 @@
                 <input class="form-control" style="max-width: 400px" aria-label="Small" aria-describedby="inputGroup-sizing-sm" v-model="carName" type="text" placeholder="Modelul Masinii" />
               </div>
             </div>
+            <div class="col">
+              <div class="row ">
+                <input class="form-control" style="max-width: 400px" aria-label="Small" aria-describedby="inputGroup-sizing-sm" v-model="carCod" type="text" placeholder="Codul Masinii" />
+              </div>
+            </div>
       
         
         
@@ -61,13 +64,7 @@
 
     </div>
      
-     <!-- <li v-for="(capti, key) in photoGallery" :key='key'> -->
-      
-     
-     
-      <!-- <p>aas{{capti.img1}}</p> -->
-     
-      <!-- <img :src="capti.photo" alt=""> -->
+   
     
       
        
@@ -86,6 +83,8 @@
       <h5 class="card-title">{{capti.carName}}</h5>
       <p class="card-text"><small> {{capti.price}}</small></p>
       <p class="card-text"> <small>{{capti.caption}}</small></p>
+       <p class="card-text"> <small>{{capti.carCod}}</small></p>
+     
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
@@ -202,29 +201,33 @@ import firebase from 'firebase';
 
 export default {
   data () {
-    return {
+    return { 
+      
       caption : '',
       carName : '',
-      price: '$',
+      price: '',
       img1: '',
+      carCod:'',
       imageData: null,
       photoGallery: []
-      
-    }
+      }
+    
   },
 
   methods: {
     create () {
       
-      const post = {
+      const cars = {
+        
         photo: this.img1,
         caption: this.caption,
         carName:this.carName,
         price: this.price,
+        carCod: this.carCod,
 
       }
 
-      firebase.database().ref('photoGallery').push(post)
+      firebase.database().ref('photoGallery').push(cars)
       .then((response) => {
         console.log(response)
       })

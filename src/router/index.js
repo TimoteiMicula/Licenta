@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
-import Secret from "../views/Secret.vue";
+import Admin from "../views/Admin.vue";
 import Crud from "../views/Crud.vue";
 import Contact from "../views/Contact.vue";
 import Terms from "../views/Terms.vue";
@@ -29,9 +29,9 @@ const routes = [
     component: Filenew
   },
   {
-    path: "/secret",
-    name: "secret",
-    component: Secret,
+    path: "/admin",
+    name: "admin",
+    component: Admin,
     meta: { requiresAuth: true }
   },
   {

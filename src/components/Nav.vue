@@ -23,13 +23,18 @@
       
 
         <li class="nav-item">
-          <router-link class="nav-link text-light" to="/secret">Secret</router-link>
+          <router-link class="nav-link text-light" to="/admin">Admin1</router-link>
+        </li>
+
+        
+
+        <li class="nav-item">
+          <router-link class="nav-link text-light" to="/filenew">Admin2</router-link>
         </li>
 
         <li class="nav-item">
           <router-link class="nav-link text-light" to="/contact">Contact</router-link>
         </li>
-
 
       </ul>
       

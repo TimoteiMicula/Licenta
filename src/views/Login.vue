@@ -44,7 +44,7 @@
           .then((data) => {
             console.log(data);
             this.$router.replace({
-              name: "secret"
+              name: "admin"
             });
           })
           .catch((error) => {
