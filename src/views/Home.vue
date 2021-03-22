@@ -1,29 +1,33 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 <template>
   <div class="all zone1">
-    <!-- <section
-      id="contact-form"
-      class="section appear clearfix contact-form img-home"
-    ></section> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <section
+    
+      class="section  img-home"
+    ></section>  -->
 
     <!-- from filenew -->
     <div class="container">
       <div class="card-deck">
         <div class="card" v-for="(capti, key) in photoGallery" :key="key">
-          <img :src="capti.photo" alt="" />
+          <img :src="capti.img1" alt="" />
           <div class="card-body">
             <p class="card-title">
               MODEL:{{ capti.carName }} <br />
               PREȚ:{{ capti.price }} <br />
               DESCRIERE:{{ capti.caption }}
-            <br>
-            COD MASINA: {{capti.carCod}}
+              <br />
+              COD MASINA: {{ capti.carCod }}
             </p>
 
-            
-
-            <button v-on:click="carNameReservation(capti.carName, capti.carCod)"
+            <button
+              v-on:click="
+                carNameReservation(capti.carName, capti.carCod, capti.img1)
+              "
               type="button"
-              class="btn btn-primary"
+              class="btn b-rezerva"
               data-toggle="modal"
               data-target=".bd-example-modal-lg"
             >
@@ -37,11 +41,16 @@
               aria-labelledby="myLargeModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog modal-lg">
+              <div class="modal-dialog modal-md">
                 <div class="modal-content">
                   <div class="col">
-                    <div class="cform" id="contact-form">
-                      <div class="col">
+                    <div class="cform">
+                      <!-- display img ------------------ -->
+                      <div class="offset-lg-1 col-lg-10 ">
+                        <img class="imgModal" :src="client.img1" alt="" />
+                      </div>
+
+                      <!-- <div class="col">
                         <div class="row inp1">
                           <input
                             v-model="client.name"
@@ -49,8 +58,23 @@
                             placeholder="Name"
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fa fa-user"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.name"
+                          type="text"
+                          class="form-control"
+                          placeholder="Name"
+                        />
                       </div>
-                      <div class="col">
+
+                      <!-- <div class="col">
                         <div class="row inp2">
                           <input
                             v-model="client.email"
@@ -58,9 +82,23 @@
                             placeholder="Email"
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text emailImp"
+                            ><i class="fa fa-envelope"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.email"
+                          type="text"
+                          class="form-control"
+                          placeholder="Email"
+                        />
                       </div>
 
-                      <div class="col">
+                      <!-- <div class="col">
                         <div class="row inp3">
                           <input
                             v-model="client.tel"
@@ -68,9 +106,23 @@
                             placeholder="Numar telefon"
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fa fa-phone"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.tel"
+                          type="text"
+                          class="form-control"
+                          placeholder="Telefon"
+                        />
                       </div>
 
-                      <div class="col">
+                      <!-- <div class="col">
                         <div class="row inp4">
                           <input
                             v-model="client.date1"
@@ -78,9 +130,24 @@
                             placeholder="De la:"
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fa fa-calendar"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.date1"
+                          type="text"
+                          onfocus="(this.type='date')"
+                          class="form-control"
+                          placeholder="Din data de:"
+                        />
                       </div>
 
-                      <div class="col">
+                      <!-- <div class="col">
                         <div class="row inp4">
                           <input
                             v-model="client.date2"
@@ -88,9 +155,24 @@
                             placeholder="Pana la:"
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fa fa-calendar"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.date2"
+                          type="text"
+                          onfocus="(this.type='date')"
+                          class="form-control"
+                          placeholder="Pana la data de:"
+                        />
                       </div>
 
-                      <div class="col">
+                      <!-- <div class="col">
                         <div class="row inp4">
                           <input
                             v-model="client.car"
@@ -98,9 +180,23 @@
                           
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fa fa-car"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.car"
+                          readonly="true"
+                          type="text"
+                          class="form-control"
+                        />
                       </div>
 
-                      <div class="col">
+                      <!-- <div class="col">
                         <div class="row inp4">
                           <input
                             v-model="client.carCod"
@@ -108,14 +204,30 @@
                           
                           />
                         </div>
+                      </div> -->
+
+                      <div class="offset-md-1 col-md-10 input-group inputModal">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fa fa-server"></i
+                          ></span>
+                        </div>
+                        <input
+                          v-model="client.carCod"
+                          readonly="true"
+                          type="text"
+                          class="form-control"
+                        />
                       </div>
 
                       <button
-                        class="btn bg-light px-4"
+                        class="offset-md-1 col-md-10 btn px-4 submitbtn"
                         type="button"
                         @click="addreservation()"
                       >
-                        <a href="http://localhost:8080/admin">click here</a>
+                        <a class="a" href="http://localhost:8080/admin"
+                          >Trimite</a
+                        >
                       </button>
                     </div>
                   </div>
@@ -128,7 +240,6 @@
         <!-- </div> -->
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -148,21 +259,19 @@ export default {
         date1: null,
         date2: null,
         car: null,
-     
+        img1: null,
         reservations: {},
         editForm: [],
-        
       },
-     
 
       photoGallery: [],
     };
   },
   methods: {
-    carNameReservation: function (carName, cod) {
-      this.client.car= carName;
+    carNameReservation: function (carName, cod, img1) {
+      this.client.car = carName;
       this.client.carCod = cod;
-     
+      this.client.img1 = img1;
     },
     //add in firebase
     addreservation() {
@@ -207,6 +316,41 @@ export default {
 <style  lang="scss" scoped>
 @import "../scss/variables.scss";
 
+.b-rezerva {
+  background-color: $turcoaz;
+  color: $alb;
+}
+
+.a {
+  color: $alb;
+}
+
+.submitbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $turcoaz;
+  margin-top: 20px;
+}
+
+.inputModal {
+  margin-top: 10px;
+}
+.form-horizontal .form-group {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.has-feedback {
+  position: relative;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+.emailImp {
+  padding: 9.6px;
+}
+
 .car-center {
   text-align: center;
 }
@@ -214,15 +358,13 @@ export default {
 .card-deck {
   margin-top: 80px;
   // display: flex;
-   align-items: center;
-   justify-content: center;
+  align-items: center;
+  justify-content: center;
   // max-width: 350px;
   // max-height: 350px;
   // min-width: 350px;
   // min-height: 480px;
   // margin-bottom: 30px;
-
-  
 }
 
 .card {
@@ -231,11 +373,19 @@ export default {
   min-width: 350px;
   min-height: 480px;
   margin-bottom: 30px;
+  margin-top: 30px;
 
   border-radius: 0.125rem;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 
-   
+  @media (max-width: 422px) {
+            max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  min-height: 480px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+        }
 }
 
 //  .zone1{
@@ -252,9 +402,25 @@ export default {
     margin: 0 auto;
 
 } */
+.imgModal {
+  max-width: 350px;
+  max-height: 350px;
+  min-width: 350px;
+  
+
+  
+
+  @media (max-width: 422px) {
+            max-width: 250px;
+  max-height: 250px;
+  min-width: 100px;
+ 
+ 
+        }
+}
 
 .img-home {
-  background-image: url("../assets/home-r.jpg");
+  background-image: url("../assets/home-t.jpg");
   height: 800px;
 }
 
@@ -265,20 +431,20 @@ export default {
 // margin-top: 100px;;
 // }
 
-.contact-form input,
-.contactForm textarea {
-  background: rgb(209, 209, 209);
-  font-family: "Open Sans", sans serif;
-  border: 0;
-  font-size: 14px;
-  text-align: left;
-  vertical-align: middle;
-  padding: 0 10px;
-  height: 40px;
-  margin-bottom: 30px;
+// .contact-form input,
+// .contactForm textarea {
+//   background: rgb(209, 209, 209);
+//   font-family: "Open Sans", sans serif;
+//   border: 0;
+//   font-size: 14px;
+//   text-align: left;
+//   vertical-align: middle;
+//   padding: 0 10px;
+//   height: 40px;
+//   margin-bottom: 30px;
 
-  border-radius: 10px;
-}
+//   border-radius: 10px;
+// }
 
 .car .descr {
   background: $turcoaz;
@@ -291,20 +457,20 @@ export default {
   width: 100%;
 }
 
-.cform input,
-.inp {
-  width: 75%;
-  background: $alb;
-  font-family: $font;
-  border: 0;
-  font-size: 20px;
-  text-align: left;
-  vertical-align: middle;
-  padding: 0 10px;
-  border-radius: 12em;
-  margin-top: 25px;
-  margin-left: 55px;
-}
+// .cform input,
+// .inp {
+// width: 55%;
+// background: $alb;
+// font-family: $font;
+// border: 0;
+// font-size: 20px;
+// text-align: left;
+// vertical-align: middle;
+// padding: 0 10px;
+// border-radius: 12em;
+// margin-top: 25px;
+// margin-left: 55px;
+// }
 
 .btn {
   margin-bottom: 60px;

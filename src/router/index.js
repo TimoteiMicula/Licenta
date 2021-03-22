@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
 import Admin from "../views/Admin.vue";
-import Crud from "../views/Crud.vue";
+// import Crud from "../views/Crud.vue";
 import Contact from "../views/Contact.vue";
 import Terms from "../views/Terms.vue";
 import Filenew from "../views/filenew.vue";
@@ -26,7 +26,8 @@ const routes = [
   {
     path: "/filenew",
     name: "filenew",
-    component: Filenew
+    component: Filenew,
+    meta: { requiresAuth: true }
   },
   {
     path: "/admin",
@@ -50,11 +51,11 @@ const routes = [
     component: Contact
   },
     
-  {
-    path: "/crud",
-    name: "crud",
-    component: Crud
-  },
+  // {
+  //   path: "/crud",
+  //   name: "crud",
+  //   component: Crud
+  // },
   {
     path: "/terms",
     name: "terms",

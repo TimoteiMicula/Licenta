@@ -56,10 +56,10 @@
       </nav> -->
     <section id="section-map" class="clearfix">
       <div class="container contact">
-        <div class="row mar-bot40 text-light text-center">
-          <div class="offset-md-2 col-md-8">
-            <div class="section-header">
-              <h2 class="titlu">Contact Auto Tim</h2>
+        
+         
+            <div class="section-header text-center">
+              <h2 class="titlu1">Contact Auto Tim</h2>
               <p class="text-center  titlu efect ">
                 REZERVĂ ONLINE SAU LA TELEFONUL:<strong>
                   +40 744 802 000</strong
@@ -68,15 +68,15 @@
               </p>
              
             </div>
-          </div>
+          
         </div>
-      </div>
+      
     </section>
     <div class="contact2 text-center">
    
       
         <div class="row top-buffer">
-          <div class="col-md-6">
+          <div class="col-md adresa1">
             <h3>Adresă</h3>
             <div>
               <address>
@@ -85,6 +85,7 @@
                 <div>Judetul: Bihor</div>
                 <div>România</div>
               </address>
+              
               <a
                 class="PDvGL q8cvFf"
                 href="https://www.google.com/maps/dir//%2746.9703852,22.6131565%27"
@@ -93,9 +94,9 @@
                 >Indicații de orientare</a
               >
             </div>
-            <br> <br><br>
+            <br> 
           </div>
-          <div class="col-md-6">
+          <div class="col-md adresa1">
             
             <h3>Program de lucru</h3>
             <div><strong> Lun:</strong> 08:00-22:00</div>
@@ -110,7 +111,7 @@
         
        
      
-     
+     <br><br><br><br>
       
     </div>
      <iframe
@@ -196,14 +197,20 @@
   border-radius: 5px;
 }
 
-.titlu {
+.titlu1 {
   color: $negru;
-   
+   margin-top:130px;
+    
 }
 .adress{
   padding-right: -20px;
+  
 }
 
+.adresa1{
+   margin-top:100px;
+   
+}
 .PDvGL {
   border-radius: 5px;
   color: $alb;
@@ -234,7 +241,7 @@
 
 .efect{
   box-shadow: 0 2px 2px -2px $gri;
-  border-radius: 55%;
+  // border-radius: 55%;
 }
 
 .section-header{
