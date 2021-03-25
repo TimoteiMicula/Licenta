@@ -88,7 +88,7 @@
               
               <a
                 class="PDvGL q8cvFf"
-                href="https://www.google.com/maps/dir//%2746.9703852,22.6131565%27"
+                href="https://www.google.com/maps/dir//AUTO-TIM,+Beznea+417068/@46.9704502,22.5428665"
                 target="_blank"
                 jslog="track:"
                 >Indicații de orientare</a
@@ -114,15 +114,7 @@
      <br><br><br><br>
       
     </div>
-     <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.6392174143044!2d22.61262542921905!3d46.97039591383469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474885345ec54dbf%3A0x36eb277d0ff6cb67!2sSC%20AUTO-TIM%20SRL!5e0!3m2!1sro!2sro!4v1610018239533!5m2!1sro!2sro"
-        width="100%"
-        height="450"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-      ></iframe>
-
+     <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d18313.25373361917!2d22.593169794268107!3d46.97580619133053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x474885298877d019%3A0x33470118e5d919f7!2sAUTO-TIM%2C%20Beznea%20417068!3m2!1d46.9704717!2d22.6130781!5e0!3m2!1sro!2sro!4v1616453598946!5m2!1sro!2sro" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     <section class="contact-area">
       <div class="container text-center">
         <div class="row">
