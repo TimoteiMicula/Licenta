@@ -8,6 +8,8 @@ import axios from "axios";
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import filenew from "./views/filenew.vue";
+// import vuetify from './plugins/vuetify';
 
 Vue.use(BootstrapVue)
 // import VueFire from 'vuefire';
@@ -16,6 +18,7 @@ Vue.use(BootstrapVue)
 
 
 
+// window.$ = window.jQuery = require('jquery');
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
@@ -43,6 +46,8 @@ firebase.auth().onAuthStateChanged(user => {
     app = new Vue({
       router,
       store,
+      
+      
       render: h => h(App)
     }).$mount("#app");
   }

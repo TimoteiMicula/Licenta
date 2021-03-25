@@ -6,6 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button> 
 
+   <img class="c" src="../assets/22logo.jpg" >
     
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,13 +23,18 @@
       
 
         <li class="nav-item">
-          <router-link class="nav-link text-light" to="/secret">Secret</router-link>
+          <router-link class="nav-link text-light" to="/admin">Admin1</router-link>
+        </li>
+
+        
+
+        <li class="nav-item">
+          <router-link class="nav-link text-light" to="/filenew">Admin2</router-link>
         </li>
 
         <li class="nav-item">
           <router-link class="nav-link text-light" to="/contact">Contact</router-link>
         </li>
-
 
       </ul>
       
@@ -36,15 +42,26 @@
     </div>
   </div>  
 
-  
 
 </template>  
+  <script>
+ 
+
+
+
+
+
+
+</script>
 
 <style lang="scss" scoped>
 @import "../scss/variables.scss";
  .navbar {
-        background-color:$navTransparent;
-        height: 62px;
+        background-color:$turcoaz;
+        // height: 62px;
+        opacity: 91%;
+        box-shadow: 0 0 5px rgb(70, 70, 70);
+
     }
 
     @media screen and (max-width: 992px) {
@@ -55,7 +72,9 @@
       text-align: center;
       padding: -12px;
       margin-top: 13px;
-        background-color: $navTransparent;
+      background-color: $turcoaz;
+      opacity: 91%;
+       box-shadow: 0 0 5px rgb(95, 95, 95);
     }
   
   }
