@@ -5,6 +5,15 @@ import store from "./store";
 import firebase from "firebase/app";
 import "firebase/auth";
 import axios from "axios";
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+Vue.use(BootstrapVue)
+// import VueFire from 'vuefire';
+
+// Vue.use(VueFire);
+
 
 
 
@@ -24,6 +33,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+window.firebase=firebase;
+
 let app;
 
 firebase.auth().onAuthStateChanged(user => {
@@ -38,3 +49,5 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 
+// export const db = app.database();
+// export const namesRef = db.ref('names');
