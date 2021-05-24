@@ -246,8 +246,9 @@
 
 <script>
 import firebase from "firebase";
-
 // require("firebase/auth");
+
+
 export default {
   name: "Crud",
   data() {
@@ -303,7 +304,7 @@ export default {
     //show data of firebase
     firebase
       .database()
-      .ref("photoGallery")
+      .ref("cars")
       .on("value", (snapshot) => {
         //  console.log(snapshot.val());
         this.photoGallery = snapshot.val();

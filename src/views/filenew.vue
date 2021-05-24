@@ -3,6 +3,8 @@
     <br /><br /><br /><br />
     <br><br><br>
   <top-header></top-header>
+  <button class="routes"><router-link class="nav-link text-light routes" to="/filenew">Adauga masini</router-link></button>
+ <button class="routes"><router-link class="nav-link text-light" to="/admin">Vizualizare rezervări</router-link></button>
     <div class="row">
       <div class="text-center font-weight-black">
         <h1>Incarcă o nouă masină pe site</h1>
@@ -48,7 +50,7 @@
             style="max-width: 400px"
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
-            v-model="caption"
+            v-model="description"
             type="text"
             placeholder="Descriere"
           />
@@ -140,7 +142,7 @@
           <p class="card-title">
             MODEL:{{ capti.carName }} <br />
             PREȚ:{{ capti.price }} <br />
-            DESCRIERE:{{ capti.caption }}
+            DESCRIERE:{{ capti.description }}
             <br />
             COD MASINA: {{ capti.carCod }}
             <br />
@@ -168,7 +170,7 @@ export default {
   components: { "top-header": TopHeader },
   data() {
     return {
-      caption: "",
+      description: "",
       carName: "",
       price: "",
       img1: "",
@@ -200,7 +202,7 @@ export default {
     create() {
       const cars = {
         img1: this.img1,
-        caption: this.caption,
+        description: this.description,
         carName: this.carName,
         price: this.price,
         carCod: this.carCod,
@@ -208,7 +210,7 @@ export default {
 
       firebase
         .database()
-        .ref("photoGallery")
+        .ref("cars")
         .push(cars)
         .then((response) => {
           console.log(response);
@@ -257,7 +259,7 @@ export default {
     deleteCar(key) {
       firebase
         .database()
-        .ref("photoGallery/" + key)
+        .ref("cars/" + key)
         .remove();
     },
   },
@@ -265,7 +267,7 @@ export default {
     //show data of firebase
     firebase
       .database()
-      .ref("photoGallery")
+      .ref("cars")
       .on("value", (snapshot) => {
         //  console.log(snapshot.val());
         this.photoGallery = snapshot.val();
@@ -287,6 +289,14 @@ export default {
   margin-top: 40px;
   margin-bottom: 40px;
   background-color: $turcoaz;
+}
+
+.routes{
+  background-color: $turcoaz;
+  margin-left: 12px;
+  border-radius: 0.125rem;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  color: $alb;
 }
 .card-deck {
   margin-top: 80px;

@@ -68,6 +68,8 @@
               </p>
              
             </div>
+            <button><a href="https://api.whatsapp.com/send/?phone=+40757383704&text=Buna%20ziua,%20as%20avea%20nevoie%20de%20mai%20multe%20detalii.%20M%C4%83%20pute%C8%9Bi%20ajuta?&app_absent=0">Redirect Whatsapp </a></button>
+          <button><a href="https://www.facebook.com/Auto-Tim-100732282165030">Redirect Facebook </a></button>
           
         </div>
       
