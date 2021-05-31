@@ -21,11 +21,11 @@
       </button>
      
       </div>
-      
-      <top-header>
+      <div class="col ">
+      <top-header class="buton">
       
     </top-header>
-      
+      </div>
       
 
 
@@ -37,7 +37,7 @@
 
     <h3>
       <!-- <p class="secret" v-for="secret in secrets" :key="secret.char_id">{{secret.name}}</p> -->
-      <h4 class="text-center">Admin</h4>
+      <h2 class="text-center" style="margin-top:40px;">Admin</h2>
     </h3>
     <!-- <input type="text" v-model='reservation' class="form-control" @keyup.enter='addreservation'> -->
 
@@ -319,8 +319,10 @@ export default {
 
 .buton {
   background-color: $turcoaz;
-  
-   min-width: 210px;
+  // text-align: center;
+   min-width: 110px;
+   max-width: 210px;
+   color: $alb;
   margin-top: 7px;
    border-radius: 0.125rem;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -346,6 +348,12 @@ div {
   max-width: 349px;
   max-height: 350px;
   min-width: 349px;
+
+  @media (max-width: 422px) {
+     max-width: 249px;
+  max-height: 250px;
+  min-width: 249px;
+  }
 }
 
 .card {

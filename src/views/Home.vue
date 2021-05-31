@@ -1,15 +1,35 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <template>
+
   <div class="all zone1">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      -->
+
+    <!-- from filenew -->
+    
 
     <section
     
       class="section  img-home"
-    ></section>  -->
 
-    <!-- from filenew -->
-    <div class="container">
+      
+    > 
+    
+    <br><br><br><br><br><br><br><br>
+    <div class="hero-text hero-text-left">
+     <p class="superheader" >AUTO-TIM  este o firma care pune la dispozitie autovehicule spre inchiriere</p>
+     <h1 class="sheader">ÎNCHIRIERI AUTO ORADEA</h1>
+     <h2 class="sheader-2">Mașini de lux, la prețuri mici!</h2>
+
+     <a class="button rezerva1" id="unu"  href="#list-car" v-smooth-scroll="{ duration: 1200, offset: -50, }">Planifică o rezervare acum!</a>
+   </div >
+    </section>
+
+   <div id="list-car" ></div>
+    <div  class="container">
       <div class="card-deck">
         <div class="card" v-for="(capti, key) in photoGallery" :key="key">
           <img :src="capti.img1" alt="" />
@@ -244,8 +264,10 @@
 </template>
 
 
+
 <script>
 import firebase from "firebase";
+
 // require("firebase/auth");
 
 
@@ -311,15 +333,71 @@ export default {
       });
   },
 };
+
+
 </script>
 
 
 <style  lang="scss" scoped>
 @import "../scss/variables.scss";
 
+// .unu{
+//   // transition: opacity .5s;
+// }
+.rezerva1 {
+  scroll-behavior: smooth;
+}
+
 .b-rezerva {
   background-color: $turcoaz;
   color: $alb;
+}
+
+.superheader{
+  font-size: 12px;
+  text-transform: uppercase; 
+  margin-bottom: 20px;    
+  font-family:"TeachableSans-Bold";
+  margin-left: 13%;
+  margin-right: 13%;
+  
+}
+
+.sheader{
+   margin-left: 13%;
+   margin-right: 13%;
+   margin-bottom: 20px; 
+   font-family: "TeachableSans-Bold";
+   
+}
+
+.sheader-2{
+   margin-left: 13%;
+   margin-right: 13%;
+    margin-bottom: 20px;  
+       max-width: none;
+    font-size: 22px;
+    line-height: 33px;
+    font-family: "TeachableSans-Bold";
+
+}
+
+.rezerva1{
+   margin-left: 13%;
+    margin-right: 13%;
+   margin-top: 30px;
+   font-family: "TeachableSans-Bold";
+    display: inline-block;
+    font-size: 19px;
+    border-radius: 100px;
+    padding: 20px 70px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: default;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color:$turcoaz;
+    color: #fff;
 }
 
 .a {

@@ -8,6 +8,8 @@ import axios from "axios";
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import VueSmoothScroll from 'vue2-smooth-scroll'
+Vue.use(VueSmoothScroll)
 // import filenew from "./views/filenew.vue";
 // import vuetify from './plugins/vuetify';
 

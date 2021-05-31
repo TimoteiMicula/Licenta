@@ -3,7 +3,7 @@
     <!-- Logged in
     <div v-if="loggedIn">Yes</div>
     <div v-else>No</div> -->
-    <button class="but btn" @click="signOut">Sign out</button>
+    <button class="btn but btn px-4 buton" @click="signOut">Sign out</button>
   </div>
 </template>
 
@@ -52,13 +52,14 @@ div {
   color: red;
 }
 .but{
-background-color:$turcoaz;
+// background-color:$turcoaz;
     
-    margin-top: 7px;
-     min-width: 210px;
-    color: $alb;
-     border-radius: 0.125rem;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  // margin-top: 20px;
+//  max-width: 250px;
+//  min-width: 180px;
+ color: $alb;
+//      border-radius: 0.125rem;
+//   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 
-}
+ }
 </style>

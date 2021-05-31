@@ -2,6 +2,7 @@
 <template>
   <div id="app">
     <navbar></navbar>
+    
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
        
@@ -17,8 +18,10 @@
 
       
 <script>
+
 import TopHeader from "./components/Top-Header"
 import Nav from "./components/Nav"
+
 require('bootstrap');
 export default {
   components: {'top-header': TopHeader,

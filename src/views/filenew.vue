@@ -1,15 +1,44 @@
 <template>
   <div class="container">
-    <br /><br /><br /><br />
-    <br><br><br>
-  <top-header></top-header>
+  
+  <!-- <top-header></top-header>
   <button class="routes"><router-link class="nav-link text-light routes" to="/filenew">Adauga masini</router-link></button>
- <button class="routes"><router-link class="nav-link text-light" to="/admin">Vizualizare rezervări</router-link></button>
+ <button class="routes"><router-link class="nav-link text-light" to="/admin">Vizualizare rezervări</router-link></button> -->
+
+  <div class="row" style="text-align: center">
+    
+<div class="col">
+<button class=" btn px-4 buton" type="button">
+        <a class="a" href="http://localhost:8080/admin"
+          >Vizualizează rezervări</a
+        >
+      </button>
+
+</div>
+   <div class="col">
+      <button class="btn px-4 buton" type="button">
+        <a class="a" href="http://localhost:8080/filenew">Adauga mașini</a>
+      </button>
+     
+      </div>
+      
+      <div class="col"><top-header class="buton">
+      
+    </top-header></div>
+      
+      
+      
+
+
+
+    
+    </div>
     <div class="row">
       <div class="text-center font-weight-black">
-        <h1>Incarcă o nouă masină pe site</h1>
+        
       </div>
     </div>
+    <h1 class="text-center font-weight-black">Incarcă o nouă masină pe site</h1>
 
     <div class="row">
       <div class="aa">
@@ -289,6 +318,16 @@ export default {
   margin-top: 40px;
   margin-bottom: 40px;
   background-color: $turcoaz;
+}
+
+.buton {
+  background-color: $turcoaz;
+  
+   min-width: 210px;
+  margin-top: 120px;
+   border-radius: 0.125rem;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  margin-bottom: 38px;
 }
 
 .routes{
