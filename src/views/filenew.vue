@@ -9,7 +9,7 @@
     
 <div class="col">
 <button class=" btn px-4 buton" type="button">
-        <a class="a" href="http://localhost:8080/admin"
+        <a class="a" href="./admin"
           >Vizualizează rezervări</a
         >
       </button>
@@ -17,7 +17,7 @@
 </div>
    <div class="col">
       <button class="btn px-4 buton" type="button">
-        <a class="a" href="http://localhost:8080/filenew">Adauga mașini</a>
+        <a class="a" href="./filenew">Adauga mașini</a>
       </button>
      
       </div>

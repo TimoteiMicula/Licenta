@@ -24,7 +24,7 @@
      <h1 class="sheader">ÎNCHIRIERI AUTO ORADEA</h1>
      <h2 class="sheader-2">Mașini de lux, la prețuri mici!</h2>
 
-     <a class="button rezerva1" id="unu"  href="#list-car" v-smooth-scroll="{ duration: 1200, offset: -50, }">Planifică o rezervare acum!</a>
+     <a class="button rezerva1" id="unu"  href="#list-car" v-smooth-scroll="{ duration: 1200, offset: -50, }">Rezervă acum!</a>
    </div >
     </section>
 
@@ -32,7 +32,7 @@
     <div  class="container">
       <div class="card-deck">
         <div class="card" v-for="(capti, key) in photoGallery" :key="key">
-          <img :src="capti.img1" alt="" />
+          <img style="border-radius: 1rem" :src="capti.img1" alt="" />
           <div class="card-body">
             <p class="card-title">
               MODEL:{{ capti.carName }} <br />
@@ -245,7 +245,7 @@
                         type="button"
                         @click="addreservation()"
                       >
-                        <a class="a" href="http://localhost:8080/admin"
+                        <a class="a" href="./admin"
                           >Trimite</a
                         >
                       </button>
@@ -448,20 +448,21 @@ export default {
 
 .card {
   max-width: 350px;
-  max-height: 350px;
+  max-height: 480px;
   min-width: 350px;
   min-height: 480px;
   margin-bottom: 30px;
   margin-top: 30px;
 
-  border-radius: 0.125rem;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  border-radius: 1rem;
+  box-shadow: 0 3px 5px 3px rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 
   @media (max-width: 422px) {
             max-width: 300px;
-  max-height: 300px;
-  min-width: 300px;
+  max-height: 480px;
+  max-width: 300px;
   min-height: 480px;
+  min-width: 300px;
   margin-bottom: 30px;
   margin-top: 30px;
         }
@@ -492,14 +493,16 @@ export default {
   @media (max-width: 422px) {
             max-width: 250px;
   max-height: 250px;
-  min-width: 100px;
+  min-width: 249px;
  
  
         }
+
+        
 }
 
 .img-home {
-  background-image: url("../assets/home-t.jpg");
+  background-image: url("../assets/home-r.jpg");
   height: 800px;
 }
 
