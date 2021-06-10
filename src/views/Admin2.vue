@@ -4,20 +4,20 @@
   <!-- <top-header></top-header>
   <button class="routes"><router-link class="nav-link text-light routes" to="/filenew">Adauga masini</router-link></button>
  <button class="routes"><router-link class="nav-link text-light" to="/admin">Vizualizare rezervări</router-link></button> -->
-
+<br><br><br><br><br>
   <div class="row" style="text-align: center">
     
 <div class="col">
 <button class=" btn px-4 buton" type="button">
         <a class="a" href="./admin"
-          >Vizualizează rezervări</a
-        >
+          ><i class="fa fa-address-card-o fa-lg" aria-hidden="true"></i> Rezervări</a>
+        
       </button>
 
 </div>
    <div class="col">
       <button class="btn px-4 buton" type="button">
-        <a class="a" href="./filenew">Adauga mașini</a>
+        <a class="a" href="./admin2"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> Adauga mașini</a>
       </button>
      
       </div>
@@ -33,6 +33,7 @@
 
     
     </div>
+    <br><br>
     <div class="row">
       <div class="text-center font-weight-black">
         
@@ -45,7 +46,7 @@
         <div>
           <div>
             <button type="button" class="btn a bphoto" @click="click1">
-              Alege o fotografie
+               <i class="fa fa-camera-retro fa-lg">   </i>     Alege o poză cu mașina
             </button>
 
             <input
@@ -128,7 +129,7 @@
     <div class="row">
       <div class="text-center">
         <button type="button" class="btn a bphoto" @click="create">
-          Incarcă
+         <i class="fa fa-cloud-upload fa-lg" aria-hidden=""></i>    Incarcă
         </button>
       </div>
     </div>
@@ -166,7 +167,7 @@
         </div>
       </div> -->
       <div class="card" v-for="(capti, key) in photoGallery" :key="key">
-        <img :src="capti.img1" alt="" />
+        <img class="add-car" :src="capti.img1" alt="" />
         <div class="card-body">
           <p class="card-title">
             MODEL:{{ capti.carName }} <br />
@@ -175,8 +176,8 @@
             <br />
             COD MASINA: {{ capti.carCod }}
             <br />
-            <button class="btn btn-xs btn-danger" @click="deleteCar(key)">
-              Delete
+            <button class="btn btn-xs btn-danger" @click="deleteCar(key)"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+               Delete
             </button>
           </p>
         </div>
@@ -312,6 +313,16 @@ export default {
 
 .a {
   color: $alb;
+ 
+}
+
+.add-car{
+@media (max-width: 422px) {
+  margin-top: 3%;
+  max-width: 98%;
+  max-height: 90%;
+ 
+        }
 }
 
 .bphoto {
@@ -323,13 +334,17 @@ export default {
 .buton {
   background-color: $turcoaz;
   
-   min-width: 210px;
-  margin-top: 120px;
-   border-radius: 0.125rem;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  margin-bottom: 38px;
+   min-width: 110px;
+  max-width: 210px;
+   border-radius: 1.3rem;
+  // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+ 
 }
 
+col {
+  // border-radius: 0.125rem;
+  // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
 .routes{
   background-color: $turcoaz;
   margin-left: 12px;
@@ -350,6 +365,7 @@ export default {
   min-height: 480px;
   margin-bottom: 30px;
   margin-top: 30px;
+  
 
   border-radius: 0.125rem;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -361,6 +377,9 @@ export default {
   min-height: 480px;
   margin-bottom: 30px;
   margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
         }
 
   //        @media (max-width: 970px) {

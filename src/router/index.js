@@ -7,7 +7,8 @@ import Admin from "../views/Admin.vue";
 // import Crud from "../views/Crud.vue";
 import Contact from "../views/Contact.vue";
 import Terms from "../views/Terms.vue";
-import Filenew from "../views/filenew.vue";
+import Admin2 from "../views/Admin2.vue";
+import FinalPage from"../views/FinalPage.vue";
 
 
 
@@ -24,9 +25,9 @@ const routes = [
     component: Home
   },
   {
-    path: "/filenew",
-    name: "filenew",
-    component: Filenew,
+    path: "/admin2",
+    name: "admin2",
+    component: Admin2,
     meta: { requiresAuth: true }
   },
   {
@@ -60,6 +61,12 @@ const routes = [
     path: "/terms",
     name: "terms",
     component: Terms
+  },
+
+  {
+    path: "/finalpage",
+    name: "finalpage",
+    component: FinalPage
   },
   
 ];

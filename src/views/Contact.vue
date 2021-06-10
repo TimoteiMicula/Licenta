@@ -123,7 +123,17 @@
       
     </div>
      <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d18313.25373361917!2d22.593169794268107!3d46.97580619133053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x474885298877d019%3A0x33470118e5d919f7!2sAUTO-TIM%2C%20Beznea%20417068!3m2!1d46.9704717!2d22.6130781!5e0!3m2!1sro!2sro!4v1616453598946!5m2!1sro!2sro" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+   <div class="container" style="margin: auto;
+  
+  
+  padding: 10px;">
+      <h2 class="text-center" style="margin-top: 40px"> Preferințele tale contează pentru noi! Răspunde la acest formular și îți vom trimite sugestii cu mașinile potrivite pentru tine.</h2>
+   <iframe class="formular" style="" src="https://docs.google.com/forms/d/e/1FAIpQLSdWNoQb94sh4RM_-WE6dHTGDR_WZcBnT5pQcbSTTtaNbKMBqA/viewform?embedded=true"  height="1978" frameborder="0" marginheight="0" marginwidth="0">Se încarcă…</iframe>
+ 
+   </div>
+  
     <section class="contact-area">
+
       <div class="container text-center">
         <div class="row">
           <div class="col-md-4 footer">
@@ -195,6 +205,16 @@
 .contact-area {
   background-color: $turcoaz;
   border-radius: 5px;
+
+}
+
+.formular{
+  width: 100%;
+  margin-top: 40px;
+  @media (max-width: 520px) { 
+    width: 300px;
+    
+  }
 }
 
 .titlu1 {
@@ -224,7 +244,7 @@
 .PDvGL {
   background-color: $turcoaz;
   border-radius: 2%;
-  opacity: 91%;
+  // opacity: 90%;
   box-shadow: 3px 2px 15px -2px $negru;
 }
 
@@ -249,15 +269,15 @@
 
 }
 
-.SocialBullets{
+// .SocialBullets{
 
-    width: 46px;
-    position: fixed;
-    right: 0;
-    bottom: 150px;
-    z-index: 999;
+//     width: 46px;
+//     position: fixed;
+//     right: 0;
+//     bottom: 150px;
+//     z-index: 999;
 
-}
+// }
 
 
 

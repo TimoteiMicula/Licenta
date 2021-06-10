@@ -24,7 +24,7 @@
      <h1 class="sheader">ÎNCHIRIERI AUTO ORADEA</h1>
      <h2 class="sheader-2">Mașini de lux, la prețuri mici!</h2>
 
-     <a class="button rezerva1" id="unu"  href="#list-car" v-smooth-scroll="{ duration: 1200, offset: -50, }">Rezervă acum!</a>
+     <a class="button rezerva1" id="unu"  href="#list-car" v-smooth-scroll="{ duration: 1200, offset: -50, }"><i class="fa fa-check" aria-hidden="true"></i> Rezervă acum!</a>
    </div >
     </section>
 
@@ -32,14 +32,23 @@
     <div  class="container">
       <div class="card-deck">
         <div class="card" v-for="(capti, key) in photoGallery" :key="key">
-          <img style="border-radius: 1rem" :src="capti.img1" alt="" />
+          
+  <a href=capti.img1><img :src="capti.img1"  alt="" class="imgCar" style=" 
+  @media (max-width: 422px) {
+  margin-top: 3px;
+  max-width: 100% ;
+
+  max-height: 100% ;
+  border-radius: 0.7rem" /></a>
+
+  
           <div class="card-body">
             <p class="card-title">
-              MODEL:{{ capti.carName }} <br />
-              PREȚ:{{ capti.price }} <br />
-              DESCRIERE:{{ capti.caption }}
+             <strong>MODEL:</strong> {{ capti.carName }} <br />
+             <strong>PREȚ:</strong>  {{ capti.price }} <br />
+             <strong>DESCRIERE:</strong>  {{ capti.description }}
               <br />
-              COD MASINA: {{ capti.carCod }}
+            <strong>COD MASINA:</strong>    {{ capti.carCod }}
             </p>
 
             <button
@@ -51,7 +60,7 @@
               data-toggle="modal"
               data-target=".bd-example-modal-lg"
             >
-              Rezervă
+             <i class="fa fa-check-circle-o" aria-hidden="true"></i>   Rezervă
             </button>
 
             <div
@@ -240,15 +249,16 @@
                         />
                       </div>
 
-                      <button
-                        class="offset-md-1 col-md-10 btn px-4 submitbtn"
-                        type="button"
+                     <a class="a" href="./finalpage"
+                          > <button
+                        class="offset-md-1 col-md-10 btn px-4 submitbtn text-light "
+                        type="button" 
                         @click="addreservation()"
-                      >
-                        <a class="a" href="./admin"
-                          >Trimite</a
-                        >
-                      </button>
+                      >Trimite
+                        
+
+                    
+                      </button></a>
                     </div>
                   </div>
                 </div>
@@ -304,6 +314,7 @@ export default {
         .push({ client: this.client })
         .then((data) => {
           console.log(data);
+          // console.log(img1);
         })
         .catch((error) => {
           console.log(error);
@@ -344,9 +355,6 @@ export default {
 // .unu{
 //   // transition: opacity .5s;
 // }
-.rezerva1 {
-  scroll-behavior: smooth;
-}
 
 .b-rezerva {
   background-color: $turcoaz;
@@ -382,26 +390,35 @@ export default {
 
 }
 
+
+
 .rezerva1{
+  scroll-behavior: smooth;
    margin-left: 13%;
     margin-right: 13%;
    margin-top: 30px;
    font-family: "TeachableSans-Bold";
     display: inline-block;
-    font-size: 19px;
+    //  font-size: px;
+    // height: 50px;
     border-radius: 100px;
     padding: 20px 70px;
     text-align: center;
-    text-decoration: none !important;
-    cursor: default;
-    outline: none !important;
-    box-shadow: none !important;
+     text-decoration: none !important;
+    // cursor: default;
+     outline: none !important;
+    // box-shadow: none !important;
     background-color:$turcoaz;
     color: #fff;
 }
 
 .a {
   color: $alb;
+  
+  text-decoration: none !important;
+    // cursor: default;
+     outline: none !important;
+
 }
 
 .submitbtn {
@@ -453,6 +470,9 @@ export default {
   min-height: 480px;
   margin-bottom: 30px;
   margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   border-radius: 1rem;
   box-shadow: 0 3px 5px 3px rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -483,18 +503,35 @@ export default {
 
 } */
 .imgModal {
-  max-width: 350px;
-  max-height: 350px;
-  min-width: 350px;
+  margin-top: 3%;
+  max-width: 98%;
+  max-height: 90%;
+  // min-width: 350px;
   
-
+.imgCar{
+  margin-top: 10px;
+  max-width: 250px ;
+  
+  max-height: 250px ;
+  border-radius: 1rem;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 422px) {
+  margin-top: 10px;
+  max-width: 50px ;
+  
+  max-height: 50px ;
+  border-radius: 1rem
+ 
+        }
+}
   
 
   @media (max-width: 422px) {
-            max-width: 250px;
-  max-height: 250px;
-  min-width: 249px;
- 
+  margin-top: 3%;
+  max-width: 98%;
+  max-height: 90%;
  
         }
 
@@ -505,6 +542,7 @@ export default {
   background-image: url("../assets/home-r.jpg");
   height: 800px;
 }
+
 
 // #contact-form input[type="text"] {
 //   height: 60px;

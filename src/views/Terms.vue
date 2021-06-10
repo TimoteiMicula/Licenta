@@ -3,7 +3,7 @@
     <br /><br /><br />
 <div class="container">
   <div class="col">
-        <img src="../assets/terms.svg" alt="">
+        <img src="../assets/terms1.svg" alt="">
       </div>
       <h1 class="titlu">Termeni și condiții pentru închiriere</h1>
     <div class="row">

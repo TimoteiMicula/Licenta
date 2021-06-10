@@ -3,7 +3,7 @@
     <!-- Logged in
     <div v-if="loggedIn">Yes</div>
     <div v-else>No</div> -->
-    <button class="btn but btn px-4 buton" @click="signOut">Sign out</button>
+    <button class="btn but  buton" @click="signOut"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Sign out</button>
   </div>
 </template>
 

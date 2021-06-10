@@ -1,51 +1,41 @@
 
 
 
+
 <template>
+
   <div>
-    <br /><br /><br /><br />
+    <!-- <navadmina></navadmina> -->
+    <br><br><br><br>
     <div class="container">
-    <div class="row" style="text-align: center">
-    
-<div class="col">
-<button class=" btn px-4 buton" type="button">
-        <a class="a" href="./admin"
-          >Vizualizează rezervări</a
-        >
+      <div class="row" style="text-align: center">
+        <div class="col">
+          <button class="btn px-4 buton" type="button">
+            <a class="a" href="./admin"><i class="fa fa-address-card-o fa-lg" aria-hidden="true"></i> Rezervări</a>
 
-        <router-link class="nav-link text-light" to="/admin">Admin1</router-link>
-      </button>
-
-</div>
-   <div class="col">
-      <button class="btn px-4 buton" type="button">
-        <a class="a" href="./filenew">Adauga mașini</a>
-      </button>
-     
+            <!-- <router-link class="nav-link text-light" to="/admin">Admin1</router-link> -->
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn px-4 buton" type="button">
+            <a class="a" href="./admin2"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> Adauga mașini</a>
+          </button>
+        </div>
+        <div class="col">
+          <top-header class="buton"> </top-header>
+        </div>
       </div>
-      <div class="col ">
-      <top-header class="buton">
-      
-    </top-header>
-      </div>
-      
-
-
-
-    
     </div>
-    </div>
-    
 
     <h3>
       <!-- <p class="secret" v-for="secret in secrets" :key="secret.char_id">{{secret.name}}</p> -->
-      <h2 class="text-center" style="margin-top:40px;">Admin</h2>
+      <h2 class="text-center" style="margin-top: 40px">Admin</h2>
     </h3>
     <!-- <input type="text" v-model='reservation' class="form-control" @keyup.enter='addreservation'> -->
 
     <!-- <div class="row">
       <div class="card-deck"> -->
-        <!-- <div class="card" v-for="(capti, key) in photoGallery" :key="key">
+    <!-- <div class="card" v-for="(capti, key) in photoGallery" :key="key">
           <img :src="capti.img1" alt="" />
           <div class="card-body">
             <p class="card-title">
@@ -55,29 +45,22 @@
               <br />
               COD MASINA: {{ capti.carCod }}
             </p> -->
-      <!-- <div class="container"> -->
-        <div class="container">
+    <!-- <div class="container"> -->
+    <div class="container">
       <div class="card-deck">
-        <div class="card" v-for="(reservationName, key) in reservations" :key="key">
-          <div >
-             <div >
-            <img class="imgModal"   :src="reservationName.client.img1" alt="" />
-          </div>
-
-
-
-          
-
-
-
-
-
-
-
+        <div
+          class="card"
+          v-for="(reservationName, key) in reservations"
+          :key="key"
+        >
+          <div>
+            <div>
+              <img class="imgModal" :src="reservationName.client.img1" alt="" />
+            </div>
 
             <p class="card-title">
               Nume: {{ reservationName.client.name }}
-              <br>
+              <br />
               <input
                 type="text"
                 v-model="editName[key]"
@@ -87,7 +70,7 @@
             </p>
             <p class="card-title">
               Email: {{ reservationName.client.email }}
-              <br>
+              <br />
               <input
                 type="text"
                 v-model="editEmail[key]"
@@ -97,7 +80,7 @@
             </p>
             <p class="card-title">
               Telefon: {{ reservationName.client.tel }}
-              <br>
+              <br />
               <input
                 type="text"
                 v-model="editTel[key]"
@@ -107,7 +90,7 @@
             </p>
             <p class="card-title">
               De la: {{ reservationName.client.date1 }}
-<br>
+              <br />
               <input
                 type="text"
                 v-model="editDate1[key]"
@@ -117,7 +100,7 @@
             </p>
             <p class="card-title">
               Pana la: {{ reservationName.client.date2 }}
-              <br>
+              <br />
               <input
                 type="text"
                 v-model="editDate2[key]"
@@ -127,7 +110,7 @@
             </p>
             <p class="card-title">
               Masina: {{ reservationName.client.car }}
-              <br>
+              <br />
               <input
                 type="text"
                 v-model="editCar[key]"
@@ -137,7 +120,7 @@
             </p>
             <p class="card-title">
               Cod unic masina: {{ reservationName.client.carCod }}
-              <br>
+              <br />
               <input
                 type="text"
                 v-model="editCarCod[key]"
@@ -145,17 +128,14 @@
                 :class="{ view: !isEditing }"
               />
             </p>
-            
           </div>
-
-         
 
           <button
             class="btn btn-xs btn-primary"
             @click="isEditing = !isEditing"
             v-if="!isEditing"
           >
-            Edit
+         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>    Edit
           </button>
 
           <button
@@ -187,7 +167,7 @@
       <p>Cod unic masina: {{reservationName.client.carCod}} </p> -->
 
           <button class="btn btn-xs btn-danger" @click="deleteReservation(key)">
-            Delete
+          <i class="fa fa-trash-o" aria-hidden="true"></i>  Delete
           </button>
           <br /><br />
           <!-- :value="reservationName.client.name" -->
@@ -203,11 +183,16 @@
 import TopHeader from "../components/Top-Header.vue";
 
 import firebase from "firebase";
+// import NavAdmin from './NavAdmin.vue';
+// import NavAdmin from "./NavAdmin";
 require("firebase/auth");
+
+
 
 export default {
   name: "Crud",
-  components: { "top-header": TopHeader },
+  components: { "top-header": TopHeader,
+   },
   data() {
     return {
       secrets: "",
@@ -221,10 +206,6 @@ export default {
       editTel: [],
       editCar: [],
       editCarCod: [],
-      
-
-      
-
 
       isEditing: false,
 
@@ -268,13 +249,8 @@ export default {
           date2: this.editDate2[key],
           car: this.editCar[key],
           carCod: this.editCarCod[key],
-          
-
-          
-          
         });
 
-        
       this.editForm = [];
     },
 
@@ -322,16 +298,16 @@ export default {
 .buton {
   background-color: $turcoaz;
   // text-align: center;
-   min-width: 110px;
-   max-width: 210px;
-   color: $alb;
+  min-width: 110px;
+  max-width: 210px;
+  color: $alb;
   margin-top: 7px;
-   border-radius: 0.125rem;
+  border-radius: 1.3rem;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
-col{
-   border-radius: 0.125rem;
+col {
+  border-radius: 0.125rem;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
@@ -352,9 +328,9 @@ div {
   min-width: 349px;
 
   @media (max-width: 422px) {
-     max-width: 249px;
-  max-height: 250px;
-  min-width: 249px;
+    max-width: 290px;
+    max-height: 250px;
+    min-width: 249px;
   }
 }
 
@@ -370,16 +346,16 @@ div {
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 
   @media (max-width: 422px) {
-            max-width: 300px;
-  max-height: 780px;
-  min-width: 300px;
-  min-height: 780px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-        }
+    max-width: 300px;
+    max-height: 780px;
+    min-width: 300px;
+    min-height: 780px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
 
   .card-title {
-        text-align: center;
-  }      
+    text-align: center;
+  }
 }
 </style>
