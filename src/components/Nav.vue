@@ -30,15 +30,19 @@
         <!-- <li class="nav-item">
           <router-link  class="nav-link text-light" to="/admin2">Adauga mașini</router-link>
         </li> -->
+          <li class="nav-item">
+          <router-link class="nav-link text-light" to="/cereoferta"><i class="fa fa-paste"></i> Cere Ofertă</router-link>
+        </li>
 
         <li class="nav-item">
           <router-link class="nav-link text-light" to="/contact"><i class="fa fa-id-badge" aria-hidden="true"></i> Contact</router-link>
         </li>
 
-         <li class="nav-item">
-          <router-link  class="nav-link text-light" to="/admin"><i class="fa fa-sign-in" aria-hidden="true"></i> Autentificare</router-link>
-        </li>
+      
 
+         <li class="nav-item">
+          <router-link  class="nav-link text-light" to="/admin"><i class="fa fa-sign-in" aria-hidden="true"></i> Logare</router-link>
+        </li>
       </ul>
       
 

@@ -9,6 +9,7 @@ import Contact from "../views/Contact.vue";
 import Terms from "../views/Terms.vue";
 import Admin2 from "../views/Admin2.vue";
 import FinalPage from"../views/FinalPage.vue";
+import CereOferta from"../views/CereOferta.vue";
 
 
 
@@ -52,11 +53,7 @@ const routes = [
     component: Contact
   },
     
-  // {
-  //   path: "/crud",
-  //   name: "crud",
-  //   component: Crud
-  // },
+ 
   {
     path: "/terms",
     name: "terms",
@@ -67,6 +64,12 @@ const routes = [
     path: "/finalpage",
     name: "finalpage",
     component: FinalPage
+  },
+
+  {
+    path: "/cereoferta",
+    name: "cereoferta",
+    component: CereOferta
   },
   
 ];
